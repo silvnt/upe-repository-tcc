@@ -1,0 +1,29 @@
+{
+  "name": "upe-repository-tcc",
+  "version": "0.0.1",
+  "description": "UPE Repository TCC",
+  "repository": "git@github.com:silvanoneto/upe-repository-tcc",
+  "license": "ISC",
+  "private": false,
+  "scripts": {
+    "lint": "eslint .",
+    "build": "babel src --out-dir bin",
+    "start": "node bin",
+    "start:dev_server": "babel-node src"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-module-resolver": "^3.0.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-tape-runner": "^2.0.1",
+    "eslint": "^4.9.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-react": "^7.4.0",
+    "pre-commit": "^1.2.2"
+  },
+  "pre-commit": [
+    "lint"
+  ]
+}
