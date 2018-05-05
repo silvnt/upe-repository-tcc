@@ -25,5 +25,8 @@
   },
   "pre-commit": [
     "lint"
-  ]
+  ],
+  "dependencies": {
+    "mysql": "^2.15.0"
+  }
 }
