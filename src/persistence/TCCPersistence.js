@@ -1,5 +1,3 @@
-/* eslint-disable no-console */
-
 class TCCPersistence {
   constructor(conn) {
     this.connection = conn;
