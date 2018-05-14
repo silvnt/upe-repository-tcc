@@ -7,7 +7,7 @@ const TccPersis = require('./persistence/TCCPersistence.js');
 
 const tccRep = new TccPersis(conn);
 
-tccRep.insert('1234', 'Putaria', 'sexo', 'Teteu_picudo', 'Sistemas de Prostituição', '2018', '2').then(() => {
+tccRep.insert('1235', 'Puta', 'AUAUAUAU', 'teteu', 'Sistemas de Informação', '2018', '3').then(() => {
   console.log('Deu certo!');
 }).catch((res) => {
   console.log(res);

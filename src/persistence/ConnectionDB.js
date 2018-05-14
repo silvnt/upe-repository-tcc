@@ -8,7 +8,7 @@ let mySqlConn = null;
     user: 'root',
     password: '1234',
     database: 'tcc',
-  });
+  }, { multipleStatements: true });
 })();
 
 module.exports = mySqlConn;
