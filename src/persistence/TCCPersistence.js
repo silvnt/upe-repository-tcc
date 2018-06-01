@@ -1,5 +1,7 @@
+const conn = require('./ConnectionDB.js');
+
 class TCCPersistence {
-  constructor(conn) {
+  constructor() {
     this.connection = conn;
   }
   insert(isbn, titulo, tema, autor, curso, ano, semestre) {
