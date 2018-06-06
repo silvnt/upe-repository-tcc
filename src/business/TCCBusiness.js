@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+
 const TccRep = require('../persistence/TCCPersistence.js');
 
 class TCCBusiness {
@@ -19,6 +21,16 @@ class TCCBusiness {
   deleteTcc(isbn) {
     return new Promise((resolve, reject) => {
       this.tccPersistor.delete(isbn).then((res) => {
+        resolve(res);
+      }).catch((res) => {
+        reject(res);
+      });
+    });
+  }
+
+  searchTcc(autor) {
+    return new Promise((resolve, reject) => {
+      this.tccPersistor.search(autor).then((res) => {
         resolve(res);
       }).catch((res) => {
         reject(res);
