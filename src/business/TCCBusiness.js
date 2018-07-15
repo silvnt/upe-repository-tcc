@@ -28,6 +28,7 @@ class TCCBusiness {
     });
   }
 
+  /*
   searchTcc(autor) {
     return new Promise((resolve, reject) => {
       this.tccPersistor.search(autor).then((res) => {
@@ -36,6 +37,70 @@ class TCCBusiness {
         reject(res);
       });
     });
+  }
+}
+*/
+  
+  searchTcc(titulo, tema, autor, curso, ano, semestre) {
+
+    let sql = "SELECT * FROM trabalhos WHERE";
+    let addAndToSqlQuery = false;
+
+    //#region Checa os dados inseridos e gera a query de busca.
+    if (titulo) {
+      sql += " titulo LIKE '%" + titulo + "%'";
+      addAndToSqlQuery = true;
+    }
+
+    if (tema) {
+      if (addAndToSqlQuery == true) {
+        sql += ` AND`;
+      }
+      sql += " tema LIKE '%" + tema + "%'";
+      addAndToSqlQuery = true;
+    }
+
+    if (autor) {
+      if (addAndToSqlQuery == true) {
+        sql += ` AND`;
+      }
+      sql += " autor LIKE '%" + autor + "%'";
+      addAndToSqlQuery = true;
+    }
+
+    if (curso) {
+      if (addAndToSqlQuery == true) {
+        sql += ` AND`;
+      }
+      sql += " curso='" + curso + "'";
+      addAndToSqlQuery = true;
+    }
+
+    if (ano) {
+      if (addAndToSqlQuery == true) {
+        sql += ` AND`;
+      }
+      sql += " ano=" + ano;
+      addAndToSqlQuery = true;
+    }
+
+    if (semestre) {
+      if (addAndToSqlQuery == true) {
+        sql += ` AND`;
+      }
+      sql += " semestre=" + semestre;
+    }
+
+    sql += `;`;
+    //#endregion
+
+    return new Promise((resolve, reject) => {
+      this.tccPersistor.searchGeneralista(sql).then((res) => {
+      resolve(res);
+    }).catch((res) => {
+      reject(res);
+    });
+  });
   }
 }
 
