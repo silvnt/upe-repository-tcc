@@ -32,7 +32,7 @@ router.post('/insert', (request, response) => {
 
 router.post('/search', (request, response) => {
   const b = request.body;
-  tccBusiness.searchTcc(b.autor).then((res) => {
+  tccBusiness.searchTcc(b.titulo, b.tema, b.autor, b.curso, b.ano, b.semestre).then((res) => {
     console.log(res);
     response.send(res);
   }).catch(() => {
